@@ -20,9 +20,7 @@ extension FinalCutPro {
 
     static var instances: [FinalCutPro] {
         
-        workspace.runningApplications
-            .filter { $0.bundleIdentifier == bundleIdentifier }
-            .map(FinalCutPro.init)
+        NSRunningApplication.runningApplications(withBundleIdentifier: bundleIdentifier).map(FinalCutPro.init)
     }
     
     static var bundleURL: URL {
@@ -70,20 +68,32 @@ extension FinalCutPro {
         }
     }
     
-    func terminate() throws {
+    @discardableResult
+    func forceTerminate() -> Bool {
         
         NSLog("Terminating a process of Final Cut Pro (pid = \(processIdentifier).")
-        try signal(SIGKILL)
+        return runningApplication.forceTerminate()
     }
 }
 
-extension Sequence where Element == FinalCutPro {
+extension Array<FinalCutPro> {
     
-    func terminate() throws {
-        
-        try forEach {
+    @discardableResult
+    func forceTerminate() -> Bool {
+
+        reduce(true) { result, finalCutPro in
             
-            try $0.terminate()
+            result && finalCutPro.forceTerminate()
         }
+    }
+    
+    var isAllTerminated: Bool {
+        
+        guard !isEmpty else {
+            
+            return true
+        }
+        
+        return allSatisfy { $0.runningApplication.isTerminated }
     }
 }
