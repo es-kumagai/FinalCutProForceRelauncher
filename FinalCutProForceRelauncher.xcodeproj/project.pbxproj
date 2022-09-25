@@ -278,7 +278,7 @@
 				CODE_SIGN_ENTITLEMENTS = FinalCutProForceRelauncher/FinalCutProForceRelauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalCutProForceRelauncher/Preview Content\"";
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -305,7 +305,7 @@
 				CODE_SIGN_ENTITLEMENTS = FinalCutProForceRelauncher/FinalCutProForceRelauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalCutProForceRelauncher/Preview Content\"";
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = NO;
