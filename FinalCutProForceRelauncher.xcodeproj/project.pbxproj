@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B18B130F28E09BB500BF6140 /* FinalCutProForceRelauncherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B130E28E09BB500BF6140 /* FinalCutProForceRelauncherApp.swift */; };
-		B18B131128E09BB500BF6140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B131028E09BB500BF6140 /* ContentView.swift */; };
 		B18B131328E09BB600BF6140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18B131228E09BB600BF6140 /* Assets.xcassets */; };
 		B18B131628E09BB600BF6140 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18B131528E09BB600BF6140 /* Preview Assets.xcassets */; };
+		B18B131E28E09BC700BF6140 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B131D28E09BC700BF6140 /* main.swift */; };
+		B18B132028E09CC000BF6140 /* FinalCutPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B131F28E09CC000BF6140 /* FinalCutPro.swift */; };
+		B18B132228E0A3E700BF6140 /* OSStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B132128E0A3E700BF6140 /* OSStatusError.swift */; };
+		B18B132428E0AA6700BF6140 /* FinalCutProError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B132328E0AA6700BF6140 /* FinalCutProError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B18B130B28E09BB500BF6140 /* FinalCutProForceRelauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalCutProForceRelauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B18B130E28E09BB500BF6140 /* FinalCutProForceRelauncherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCutProForceRelauncherApp.swift; sourceTree = "<group>"; };
-		B18B131028E09BB500BF6140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B18B131228E09BB600BF6140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B18B131528E09BB600BF6140 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B18B131728E09BB600BF6140 /* FinalCutProForceRelauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalCutProForceRelauncher.entitlements; sourceTree = "<group>"; };
+		B18B131D28E09BC700BF6140 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B18B131F28E09CC000BF6140 /* FinalCutPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCutPro.swift; sourceTree = "<group>"; };
+		B18B132128E0A3E700BF6140 /* OSStatusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSStatusError.swift; sourceTree = "<group>"; };
+		B18B132328E0AA6700BF6140 /* FinalCutProError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCutProError.swift; sourceTree = "<group>"; };
+		B18B132728E0B25E00BF6140 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +41,7 @@
 		B18B130228E09BB500BF6140 = {
 			isa = PBXGroup;
 			children = (
+				B18B132728E0B25E00BF6140 /* Resources */,
 				B18B130D28E09BB500BF6140 /* FinalCutProForceRelauncher */,
 				B18B130C28E09BB500BF6140 /* Products */,
 			);
@@ -52,8 +58,10 @@
 		B18B130D28E09BB500BF6140 /* FinalCutProForceRelauncher */ = {
 			isa = PBXGroup;
 			children = (
-				B18B130E28E09BB500BF6140 /* FinalCutProForceRelauncherApp.swift */,
-				B18B131028E09BB500BF6140 /* ContentView.swift */,
+				B18B131D28E09BC700BF6140 /* main.swift */,
+				B18B131F28E09CC000BF6140 /* FinalCutPro.swift */,
+				B18B132128E0A3E700BF6140 /* OSStatusError.swift */,
+				B18B132328E0AA6700BF6140 /* FinalCutProError.swift */,
 				B18B131228E09BB600BF6140 /* Assets.xcassets */,
 				B18B131728E09BB600BF6140 /* FinalCutProForceRelauncher.entitlements */,
 				B18B131428E09BB600BF6140 /* Preview Content */,
@@ -139,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18B131128E09BB500BF6140 /* ContentView.swift in Sources */,
-				B18B130F28E09BB500BF6140 /* FinalCutProForceRelauncherApp.swift in Sources */,
+				B18B132428E0AA6700BF6140 /* FinalCutProError.swift in Sources */,
+				B18B131E28E09BC700BF6140 /* main.swift in Sources */,
+				B18B132028E09CC000BF6140 /* FinalCutPro.swift in Sources */,
+				B18B132228E0A3E700BF6140 /* OSStatusError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +281,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalCutProForceRelauncher/Preview Content\"";
 				DEVELOPMENT_TEAM = 89282N6UM7;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -298,7 +308,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FinalCutProForceRelauncher/Preview Content\"";
 				DEVELOPMENT_TEAM = 89282N6UM7;
-				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
