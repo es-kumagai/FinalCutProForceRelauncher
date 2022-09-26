@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B183E3CE28E140D9008DD46C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B183E3CD28E140D9008DD46C /* InfoPlist.strings */; };
+		B183E3D128E14246008DD46C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B183E3D028E14246008DD46C /* README.md */; };
 		B18B131328E09BB600BF6140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18B131228E09BB600BF6140 /* Assets.xcassets */; };
 		B18B131E28E09BC700BF6140 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B131D28E09BC700BF6140 /* main.swift */; };
 		B18B132028E09CC000BF6140 /* FinalCutPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B131F28E09CC000BF6140 /* FinalCutPro.swift */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		B183E3CD28E140D9008DD46C /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B183E3CF28E14111008DD46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B183E3D028E14246008DD46C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B18B130B28E09BB500BF6140 /* FinalCutProForceRelauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalCutProForceRelauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18B131228E09BB600BF6140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B18B131728E09BB600BF6140 /* FinalCutProForceRelauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalCutProForceRelauncher.entitlements; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		B18B130228E09BB500BF6140 = {
 			isa = PBXGroup;
 			children = (
+				B183E3D028E14246008DD46C /* README.md */,
 				B18B132728E0B25E00BF6140 /* Resources */,
 				B18B130D28E09BB500BF6140 /* FinalCutProForceRelauncher */,
 				B18B130C28E09BB500BF6140 /* Products */,
@@ -129,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B183E3D128E14246008DD46C /* README.md in Resources */,
 				B183E3CE28E140D9008DD46C /* InfoPlist.strings in Resources */,
 				B18B131328E09BB600BF6140 /* Assets.xcassets in Resources */,
 			);
