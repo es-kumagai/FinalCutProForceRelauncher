@@ -45,6 +45,16 @@ extension FinalCutPro {
         return try await FinalCutPro(runningApplication: workspace.openApplication(at: bundleURL, configuration: configuration))
     }
     
+    static func forceTerminate(withCheckingInterval interval: UInt64) async throws {
+        
+        instances.forceTerminate()
+        
+        while !instances.isAllTerminated {
+            
+            try await Task.sleep(nanoseconds: 100_000_000)
+        }
+    }
+        
     var processIdentifier: pid_t {
         
         runningApplication.processIdentifier
@@ -80,7 +90,7 @@ extension Array<FinalCutPro> {
     
     @discardableResult
     func forceTerminate() -> Bool {
-
+        
         reduce(true) { result, finalCutPro in
             
             result && finalCutPro.forceTerminate()

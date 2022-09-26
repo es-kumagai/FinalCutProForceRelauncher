@@ -11,16 +11,11 @@ import AppKit
 let finalCutPros = FinalCutPro.instances
 let semaphore = DispatchSemaphore(value: 0)
 
-Task.detached {
+Task {
     
-    finalCutPros.forceTerminate()
-    
-    while !FinalCutPro.instances.isAllTerminated {
-        
-        usleep(100_000)
-    }
-    
+    try await FinalCutPro.forceTerminate(withCheckingInterval: 100_000_000)
     try await FinalCutPro.open()
+
     semaphore.signal()
 }
 
