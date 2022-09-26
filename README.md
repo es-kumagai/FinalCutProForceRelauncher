@@ -1,6 +1,6 @@
 # Final Cut Pro Relauncher
 
-![AppIcon](Resources/AppIcon-64.png)
+![AppIcon](Resources/AppIcon-128.png)
 
 This app is a relauncher for Final Cut Pro.
 
