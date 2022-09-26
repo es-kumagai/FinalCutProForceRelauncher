@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B183E3CE28E140D9008DD46C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B183E3CD28E140D9008DD46C /* InfoPlist.strings */; };
 		B18B131328E09BB600BF6140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18B131228E09BB600BF6140 /* Assets.xcassets */; };
-		B18B131628E09BB600BF6140 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18B131528E09BB600BF6140 /* Preview Assets.xcassets */; };
 		B18B131E28E09BC700BF6140 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B131D28E09BC700BF6140 /* main.swift */; };
 		B18B132028E09CC000BF6140 /* FinalCutPro.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B131F28E09CC000BF6140 /* FinalCutPro.swift */; };
 		B18B132228E0A3E700BF6140 /* OSStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18B132128E0A3E700BF6140 /* OSStatusError.swift */; };
@@ -16,9 +16,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B183E3CD28E140D9008DD46C /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		B183E3CF28E14111008DD46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B18B130B28E09BB500BF6140 /* FinalCutProForceRelauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalCutProForceRelauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18B131228E09BB600BF6140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B18B131528E09BB600BF6140 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B18B131728E09BB600BF6140 /* FinalCutProForceRelauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalCutProForceRelauncher.entitlements; sourceTree = "<group>"; };
 		B18B131D28E09BC700BF6140 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B18B131F28E09CC000BF6140 /* FinalCutPro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCutPro.swift; sourceTree = "<group>"; };
@@ -58,23 +59,16 @@
 		B18B130D28E09BB500BF6140 /* FinalCutProForceRelauncher */ = {
 			isa = PBXGroup;
 			children = (
+				B183E3CF28E14111008DD46C /* Info.plist */,
 				B18B131D28E09BC700BF6140 /* main.swift */,
+				B183E3CD28E140D9008DD46C /* InfoPlist.strings */,
 				B18B131F28E09CC000BF6140 /* FinalCutPro.swift */,
 				B18B132128E0A3E700BF6140 /* OSStatusError.swift */,
 				B18B132328E0AA6700BF6140 /* FinalCutProError.swift */,
 				B18B131228E09BB600BF6140 /* Assets.xcassets */,
 				B18B131728E09BB600BF6140 /* FinalCutProForceRelauncher.entitlements */,
-				B18B131428E09BB600BF6140 /* Preview Content */,
 			);
 			path = FinalCutProForceRelauncher;
-			sourceTree = "<group>";
-		};
-		B18B131428E09BB600BF6140 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				B18B131528E09BB600BF6140 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18B131628E09BB600BF6140 /* Preview Assets.xcassets in Resources */,
+				B183E3CE28E140D9008DD46C /* InfoPlist.strings in Resources */,
 				B18B131328E09BB600BF6140 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,12 +272,12 @@
 				CODE_SIGN_ENTITLEMENTS = FinalCutProForceRelauncher/FinalCutProForceRelauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"FinalCutProForceRelauncher/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalCutProForceRelauncher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,12 +299,12 @@
 				CODE_SIGN_ENTITLEMENTS = FinalCutProForceRelauncher/FinalCutProForceRelauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"FinalCutProForceRelauncher/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 89282N6UM7;
 				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinalCutProForceRelauncher/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
