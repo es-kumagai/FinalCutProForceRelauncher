@@ -13,6 +13,10 @@ struct FinalCutPro {
     static var workspace = NSWorkspace.shared
     static let bundleIdentifier = "com.apple.FinalCut"
     
+    static let checkingInterval: UInt64 = 100_000_000
+    static let normalTerminationTimeout: DispatchTime = .now() + 5
+    static let forceTerminationTimeout: DispatchTime = .now() + 10
+
     let runningApplication: NSRunningApplication
 }
 
@@ -44,17 +48,83 @@ extension FinalCutPro {
         NSLog("Launching a Final Cut Pro ...")
         return try await FinalCutPro(runningApplication: workspace.openApplication(at: bundleURL, configuration: configuration))
     }
-    
-    static func forceTerminate(withCheckingInterval interval: UInt64) async throws {
+
+    @discardableResult
+    static func terminate(withCheckingInterval interval: UInt64 = checkingInterval, normalTerminationTimeout: DispatchTime = normalTerminationTimeout, forceTerminationTimeout: DispatchTime = forceTerminationTimeout) async throws -> TerminationResult {
         
-        instances.forceTerminate()
-        
-        while !instances.isAllTerminated {
-            
-            try await Task.sleep(nanoseconds: 100_000_000)
+        if try await normalTerminate(withCheckingInterval: interval, timeout: normalTerminationTimeout).completed {
+
+            return .terminateCompletely
+        }
+        else {
+
+            NSLog("Normal termination hasn't be completed")
+            return try await forceTerminate(withCheckingInterval: interval, timeout: forceTerminationTimeout)
         }
     }
+    
+    @discardableResult
+    static func forceTerminate(withCheckingInterval interval: UInt64 = checkingInterval, timeout: DispatchTime = forceTerminationTimeout) async throws -> TerminationResult {
         
+        guard instances.forceTerminate() else {
+            
+            NSLog("Failed to request force termination.")
+            return .requestNotAccepted
+        }
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        Task {
+            
+            while !instances.isAllTerminated {
+                
+                try await Task.sleep(nanoseconds: 100_000_000)
+            }
+            
+            semaphore.signal()
+        }
+        
+        switch semaphore.wait(timeout: timeout) {
+            
+        case .success:
+            return .terminateCompletely
+            
+        case .timedOut:
+            return .requestTimedOut
+        }
+    }
+
+    @discardableResult
+    static func normalTerminate(withCheckingInterval interval: UInt64 = checkingInterval, timeout: DispatchTime = normalTerminationTimeout) async throws -> TerminationResult {
+        
+        guard instances.normalTerminate() else {
+            
+            NSLog("Failed to request force termination.")
+            return .requestNotAccepted
+        }
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        Task {
+            
+            while !instances.isAllTerminated {
+                
+                try await Task.sleep(nanoseconds: 100_000_000)
+            }
+            
+            semaphore.signal()
+        }
+        
+        switch semaphore.wait(timeout: timeout) {
+            
+        case .success:
+            return .terminateCompletely
+            
+        case .timedOut:
+            return .requestTimedOut
+        }
+    }
+
     var processIdentifier: pid_t {
         
         runningApplication.processIdentifier
@@ -70,6 +140,14 @@ extension FinalCutPro {
         runningApplication.bundleURL!
     }
     
+    var isHangup: Bool {
+        
+        // TODO: ハングアップしているかを判定する方法がわからないため、実装保留中です。
+        // ここでハングアップ判定ができたら、最初は通常の終了を試みようとして、
+        // ハングアップしている場合に強制終了を試みることが可能になります。
+        return true
+    }
+    
     func signal(_ signal: some BinaryInteger) throws {
         
         guard kill(processIdentifier, Int32(signal)) == S_OK else {
@@ -81,8 +159,15 @@ extension FinalCutPro {
     @discardableResult
     func forceTerminate() -> Bool {
         
-        NSLog("Terminating a process of Final Cut Pro (pid = \(processIdentifier).")
+        NSLog("Trying force termination of a Final Cut Pro process (pid = \(processIdentifier)).")
         return runningApplication.forceTerminate()
+    }
+    
+    @discardableResult
+    func normalTerminate() -> Bool {
+        
+        NSLog("Trying normal termination of a Final Cut Pro process (pid = \(processIdentifier)).")
+        return runningApplication.terminate()
     }
 }
 
@@ -94,6 +179,20 @@ extension Array<FinalCutPro> {
         reduce(true) { result, finalCutPro in
             
             result && finalCutPro.forceTerminate()
+        }
+    }
+    
+    @discardableResult
+    func normalTerminate() -> Bool {
+        
+        reduce(true) { result, finalCutPro in
+            
+            guard !finalCutPro.isHangup else {
+                
+                return false
+            }
+            
+            return result && finalCutPro.normalTerminate()
         }
     }
     

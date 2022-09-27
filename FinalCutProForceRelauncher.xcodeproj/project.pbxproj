@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10900E128E300F600391477 /* TerminationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10900E028E300F600391477 /* TerminationResult.swift */; };
 		B183E3CE28E140D9008DD46C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B183E3CD28E140D9008DD46C /* InfoPlist.strings */; };
 		B183E3D128E14246008DD46C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B183E3D028E14246008DD46C /* README.md */; };
 		B18B131328E09BB600BF6140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18B131228E09BB600BF6140 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10900E028E300F600391477 /* TerminationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminationResult.swift; sourceTree = "<group>"; };
 		B183E3CD28E140D9008DD46C /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		B183E3CF28E14111008DD46C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B183E3D028E14246008DD46C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				B18B131D28E09BC700BF6140 /* main.swift */,
 				B183E3CD28E140D9008DD46C /* InfoPlist.strings */,
 				B18B131F28E09CC000BF6140 /* FinalCutPro.swift */,
+				B10900E028E300F600391477 /* TerminationResult.swift */,
 				B18B132128E0A3E700BF6140 /* OSStatusError.swift */,
 				B18B132328E0AA6700BF6140 /* FinalCutProError.swift */,
 				B18B131228E09BB600BF6140 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 				B18B132428E0AA6700BF6140 /* FinalCutProError.swift in Sources */,
 				B18B131E28E09BC700BF6140 /* main.swift in Sources */,
 				B18B132028E09CC000BF6140 /* FinalCutPro.swift in Sources */,
+				B10900E128E300F600391477 /* TerminationResult.swift in Sources */,
 				B18B132228E0A3E700BF6140 /* OSStatusError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

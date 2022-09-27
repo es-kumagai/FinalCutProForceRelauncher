@@ -8,22 +8,8 @@
 
 import AppKit
 
-let finalCutPros = FinalCutPro.instances
-let semaphore = DispatchSemaphore(value: 0)
+let result = try await FinalCutPro.terminate()
+NSLog(result.description)
 
-Task {
-    
-    try await FinalCutPro.forceTerminate(withCheckingInterval: 100_000_000)
-    try await FinalCutPro.open()
-
-    semaphore.signal()
-}
-
-switch semaphore.wait(timeout: .now() + 10) {
-    
-case .success:
-    NSLog("A process of Final Cut Pro has been relaunched.")
-    
-case .timedOut:
-    fatalError("Processes of Final Cut Pro were not terminated within the prescribed time.")
-}
+try await FinalCutPro.open()
+NSLog("A process of Final Cut Pro has been relaunched.")
